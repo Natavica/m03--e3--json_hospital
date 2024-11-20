@@ -1,0 +1,42 @@
+[
+    {
+      "nombre": "Dr. Yoda Jedi",
+      "especialidad": "Otorrinolaringología",
+      "resena": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "foto": "./assets/images/profesional--yoda.png",
+      "experiencia": "3 años de experiencia",
+      "disponibilidad": "jueves",
+      "horario": ["08:00", "13:00", "14:00"],
+      "contacto": ["dr.yodajedi@satarwarshospital.space"]
+    },
+    {
+      "nombre": "Dr. César Tapia",
+      "especialidad": "Dermatología",
+      "resena": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "foto": "./assets/images/profesional--c3po.png",
+      "experiencia": "3 años de experiencia",
+      "disponibilidad": "lunes",
+      "horario": ["08:00", "09:00", "13:00", "14:00", "15:00"],
+      "contacto": ["dr.cesartapia@satarwarshospital.space"]
+    },
+    {
+      "nombre": "Dr. Chew Bacca",
+      "especialidad": "Cardiología",
+      "resena": "orem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
+      "foto": "./assets/images/profesional--chewie.png",
+      "experiencia": "5 años de experiencia",
+      "disponibilidad": "viernes",
+      "horario": ["08:00", "09:00", "11:00", "13:00", "14:00"],
+      "contacto": ["dr.chewbacca@satarwarshospital.space"]
+  },
+  {
+      "nombre": "Dr. Darth Vader",
+      "especialidad": "Cirujía General",
+      "resena": "orem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
+      "foto": "./assets/images/profesional--vader.png",
+      "experiencia": "3 años de experiencia",
+      "disponibilidad": "jueves",
+      "horario": ["09:00", "10:00", "11:00", "12:00"],
+      "contacto": ["dr.darthvader@satarwarshospital.space"]
+  }
+]
