@@ -27,8 +27,8 @@ body {
     @media (max-width: 768px) {
         padding: 20px 20px 30px;
     }
-    .section__text {
-        padding-bottom: 30px;
+    & .section__title {
+        margin-bottom: 20px;
     }
     
     .section__title--primary {
@@ -44,7 +44,6 @@ body {
         padding: 20px  30px;
         text-align: center;
         margin-bottom: 30px;
-        padding-bottom: 20px;
         font-family: "Titillium Web", sans-serif;
         font-size: 30px;
         p {

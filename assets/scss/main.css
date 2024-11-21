@@ -207,8 +207,8 @@ body .body__container {
     padding: 20px 20px 30px;
   }
 }
-.section .section__text {
-  padding-bottom: 30px;
+.section .section__title {
+  margin-bottom: 20px;
 }
 .section .section__title--primary {
   text-align: center;
@@ -223,7 +223,6 @@ body .body__container {
   padding: 20px 30px;
   text-align: center;
   margin-bottom: 30px;
-  padding-bottom: 20px;
   font-family: "Titillium Web", sans-serif;
   font-size: 30px;
 }
@@ -497,4 +496,21 @@ button {
 button:hover {
   color: white;
   background: rgb(135, 181, 176);
+}
+
+.doctor {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doctor img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
