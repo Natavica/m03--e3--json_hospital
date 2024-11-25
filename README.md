@@ -1,9 +1,10 @@
-# Módulo 03: Taller 02
-## Taller: Integración de Funcionalidades Básicas de JavaScript en el Sitio Web del Hospital
+# Módulo 03: Evaluación M3 - Laboratorio virtual 1
+## Laboratorio Virtual: Integración de JSON, Estructuras de Datos y Algoritmos en el Sitio Web del Hospital
 
 ### Descripción del Proyecto
-*Este proyecto es un sitio web informativo para una clínica médica. El propósito principal es brindar información clara y accesible sobre los servicios médicos, el equipo médico y los detalles de contacto de la clínica. Está desarrollado utilizando HTML, CSS y JavaScript para proporcionar una experiencia fluida y amigable para los usuarios. Es la segunda versión con mejoras como estilos modularizados con SASS modularizado
-s con SASS y se aplica BEM*
+*
+En este laboratorio, los estudiantes implementarán JSON para manipular y transferir datos en el sitio web del hospital, además de trabajar con estructuras de datos avanzadas y crear algoritmos para optimizar las operaciones con estos datos. Los estudiantes también practicarán la clonación, fusión y recorrido de objetos, y la implementación de algoritmos como búsqueda y ordenamiento en JavaScript.
+*
 
 ---
 
