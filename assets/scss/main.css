@@ -505,6 +505,9 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 16px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
 }
 
 .doctor img {

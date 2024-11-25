@@ -1,4 +1,4 @@
-[
+const doctores = [
     {
       "nombre": "Dr. Yoda Jedi",
       "especialidad": "Otorrinolaringología",
@@ -109,4 +109,7 @@
     "horario": ["07:00 AM", "10:00 AM", "01:00 PM", "05:00 PM", "06:00 PM"],
     "contacto": ["correo@starwars.hospital"]
   }
-]
+  ];
+
+  
+

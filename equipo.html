@@ -31,7 +31,7 @@
                         <li class="navbar__links__item"><a href="index.html">Home</a></li>
                         <li class="navbar__links__item"><a href="equipo.html">Equipo</a></li>
                         <li class="navbar__links__item"><a href="contacto.html">Contacto</a></li>
-                        <li class="navbar__links__item navbar__links__item--cta"><a id="reserva" onclick="reservarHora()">Reserva tu cita</a>
+                        <li class="navbar__links__item navbar__links__item--cta"><a id="reserva">Reserva tu cita</a>
                         </li>
                     </ul>
                 </div>
@@ -62,56 +62,17 @@
                     cirugía interplanetaria, y están comprometidos con la salud y el bienestar de nuestros pacientes.
                 </p>
 
-                <!-- <div class="filters">
-                    <button id="btn-cardiologos">Mostrar Cardiología</button>
-                    <button id="btn-dermatologos">Mostrar Dermatología</button>
-                    <button id="btn-todos">Mostrar Todos</button>
-                </div> -->
+            
+
+                <select id="specialty-filter">
+                    <option value="">Todas las especialidades</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Cirugía">Cirugía</option>
+                    <option value="Otorrinolaringología">Otorrinolaringología</option>
+                </select>
 
                 <div id="doctor-list"></div>
 
-               <!-- <div class="cards__container cards__container--equipo">
-                     <article class="card">
-                        <img class="card__img" src="assets/images/profesional--yoda.png" alt="Imagen Dr. Yoda Jedi">
-                        <ul>
-                            <li class="card__text--nombre">Dr. Yoda Jedi</li>
-                            <li class="card__text--especialidad">Otorrinolaringología</li>
-                            <li class="card__text--resena">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                                minus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velit
-                                placeat eligendi quod, eos odit explicabo repellendus sint voluptas.</li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <img class="card__img" src="assets/images/profesional--c3po.png" alt="Imagen Dr. César Tapia">
-                        <ul>
-                            <li class="card__text--nombre">Dr. César Tapia</li>
-                            <li class="card__text--especialidad">Dermatología</li>
-                            <li class="card__text--resena">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                                minus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velit
-                                placeat eligendi quod, eos odit explicabo repellendus sint voluptas.</li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <img class="card__img" src="assets/images/profesional--chewie.png" alt="Imagen Dr. Chew Bacca">
-                        <ul>
-                            <li class="card__text--nombre">Dr. Chew Bacca</li>
-                            <li class="card__text--especialidad">Cardiología</li>
-                            <li class="card__text--resena">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                                minus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velit
-                                placeat eligendi quod, eos odit explicabo repellendus sint voluptas.</li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <img class="card__img" src="assets/images/profesional--vader.png" alt="Imagen Dr. Darth Vader">
-                        <ul>
-                            <li class="card__text--nombre">Dr. Darth Vader</li>
-                            <li class="card__text--especialidad">Cirujía General</li>
-                            <li class="card__text--resena">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-                                minus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velit
-                                placeat eligendi quod, eos odit explicabo repellendus sint voluptas.</li>
-                        </ul>
-                    </article> 
-                </div>-->
             </section>
         </main>
 
@@ -150,10 +111,11 @@
 
  
     <<script src="assets/js/prompt.js"></script>
-    <script src="assets/js/script.js"></script> 
+    <!-- <script src="assets/js/script.js"></script>  -->
     <script src="./assets/js/navbar.js"></script>
-    <script src="./assets/js/functions.js"></script>
+    <script src="./assets/js/filter.js"></script>
     <script src="./assets/js/equipo.json"></script>
+    <script src="./assets/js/clone.js"></script>
 
 </body>
 

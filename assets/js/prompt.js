@@ -1,12 +1,12 @@
 
 function validarNombre(nombre) {
-    debugger; // Inspecciona el valor de 'nombre'
+    // debugger; // Inspecciona el valor de 'nombre'
     const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     return regex.test(nombre) && nombre.trim() !== "";
 }
 
 function validarCorreo(correo) {
-    debugger; // Inspecciona el valor de 'correo'
+    // debugger; // Inspecciona el valor de 'correo'
     if (!correo.includes("@")) {
         return false;
     } else {
@@ -15,7 +15,7 @@ function validarCorreo(correo) {
 }
 
 function validarTelefono(telefono) {
-    debugger; // Inspecciona el valor de 'telefono'
+    // debugger; // Inspecciona el valor de 'telefono'
     const regex = /^\d{7,15}$/;
     return regex.test(telefono);
 }

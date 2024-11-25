@@ -76,7 +76,7 @@ function filtrarProfesionales(condicion) {
 
 // Mostrar profesionales
 function mostrarProfesionales(profesionales) {
-    const contenedor = document.querySelector(".cards__container--equipo");
+    const contenedor = document.querySelector("#doctor-list");
     if (!contenedor) {
         console.error("Contenedor de tarjetas no encontrado.");
         return;
