@@ -47,25 +47,72 @@
                 <p>
                     Implementa estructuras de datos en el sitio web del hospital para gestionar mejor la información de los doctores:
                     <br>
-                    - Arreglos: Utiliza un arreglo para almacenar la lista de doctores. Implementa operaciones como agregar, eliminar y buscar doctores dentro del arreglo.
+                    - <b>Arreglos:</b> Utiliza un arreglo para almacenar la lista de doctores. Implementa operaciones como agregar, eliminar y buscar doctores dentro del arreglo.
                     <br>
-                    - Pilas: Implementa una pila para gestionar las citas de los pacientes (última cita agendada, próxima cita a atender, etc.).
+                    - <b>Pilas:</b> Implementa una pila para gestionar las citas de los pacientes (última cita agendada, próxima cita a atender, etc.).
                     <br>
-                    - Colas: Crea una cola para simular el orden de llegada de los pacientes en la página de contacto.
+                    - <b>Colas:</b>Crea una cola para simular el orden de llegada de los pacientes en la página de contacto.
                     </p>
                 </p>
             </section>
 
             <section class="section section--equipo">
 
-                <select id="specialty-filter">
+                <h2>Agregar Médico</h2>
+                <form id="formMedico">
+                  <input type="text" id="nombre" placeholder="Nombre" required>
+                  <input type="text" id="especialidad" placeholder="Especialidad" required>
+                  <input type="text" id="experiencia" placeholder="Experiencia" required>
+                  <input type="text" id="disponibilidad" placeholder="Disponibilidad" required>
+                  <button type="submit">Agregar Médico</button>
+                </form>
+                <table id="tablaMedicos">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Especialidad</th>
+                      <th>Experiencia</th>
+                      <th>Disponibilidad</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Los médicos se mostrarán aquí -->
+                  </tbody>
+                </table>
+
+                <br>
+                <br>
+                <h2>Buscar Médicos</h2>
+                    <!-- Campo de búsqueda -->
+                    <input type="text" id="buscarNombre" placeholder="Buscar por nombre">
+
+                    <!-- Botón de búsqueda -->
+                    <button id="buscarBtn">Buscar</button>
+
+                    <table id="tablaBusqueda">
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Especialidad</th>
+                            <th>Experiencia</th>
+                            <th>Disponibilidad</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Los médicos se mostrarán aquí -->
+                        </tbody>
+                      </table>
+
+
+                <!-- <select id="specialty-filter">
                     <option value="">Todas las especialidades</option>
                     <option value="Cardiología">Cardiología</option>
                     <option value="Cirugía">Cirugía</option>
                     <option value="Otorrinolaringología">Otorrinolaringología</option>
                 </select>
 
-                <div id="doctor-list"></div>
+                <div id="doctor-list"></div> -->
 
             </section>
         </main>
@@ -104,11 +151,11 @@
     </div>
 
  
-    <<script src="assets/js/prompt.js"></script>
+    <script src="assets/js/prompt.js"></script>
     <script src="./assets/js/navbar.js"></script>
-    <script src="./assets/js/filter.js"></script>
+    <!-- <script src="./assets/js/filter.js"></script> -->
     <script src="./assets/js/clone.js"></script>
-
+    <script src="./assets/js/estructuraDatos.js"></script>
 </body>
 
 </html>

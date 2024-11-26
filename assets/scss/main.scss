@@ -355,3 +355,32 @@ button:hover {
     color: #FFF;
     border-right: 20px solid transparent;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #898383;
+  }
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  th, td {
+    padding: 8px 12px;
+    text-align: left;
+  }
+  button {
+    padding: 8px 20px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    padding: 8px 10px;
+    font-family: "Titillium Web", sans-serif;
+  }
+
+ 
