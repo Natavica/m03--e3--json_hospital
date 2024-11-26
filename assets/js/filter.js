@@ -77,6 +77,6 @@ fetch('./assets/js/equipo.json') // Nueva ruta al JSON
       displayDoctors(filteredDoctors);
     });
   })
-  .catch(error => {
-    console.error('Error al cargar el JSON:', error);
-  });
+  // .catch(error => {
+  //   console.error('Error al cargar el JSON:', error);
+  // });

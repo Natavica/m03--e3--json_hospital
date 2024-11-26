@@ -1,45 +1,46 @@
+// JSON original
 const doctores = [
-    {
-      "nombre": "Dr. Yoda Jedi",
-      "especialidad": "Otorrinolaringología",
-      "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores.",
-      "foto": "./assets/images/profesional--yoda.png",
-      "experiencia": "8 años de experiencia",
-      "disponibilidad": "jueves",
-      "horario": ["09:00 AM", "10:00 AM", "11:00 AM", "02:00 PM", "04:00 PM"],
-      "contacto": ["correo@starwars.hospital"]
-    },
-    {
-      "nombre": "Dr. César Tapia",
-      "especialidad": "Dermatología",
-      "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores.",
-      "foto": "./assets/images/profesional--c3po.png",
-      "experiencia": "3 años de experiencia",
-      "disponibilidad": "lunes",
-      "horario": ["09:00 AM", "10:00 AM", "01:00 PM", "03:00 PM", "04:00 PM"],
-      "contacto": ["correo@starwars.hospital"]
-    },
-    {
-      "nombre": "Dr. Chew Bacca",
-      "especialidad": "Cardiología",
-      "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
-      "foto": "./assets/images/profesional--chewie.png",
-      "experiencia": "5 años de experiencia",
-      "disponibilidad": "viernes",
-      "horario": ["07:00 AM", "10:00 AM", "01:00 PM", "05:00 PM", "06:00 PM"],
-      "contacto": ["correo@starwars.hospital"]
-    },
-    {
-      "nombre": "Dr. Darth Vader",
-      "especialidad": "Cirugía",
-      "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
-      "foto": "./assets/images/profesional--vader.png",
-      "experiencia": "3 años de experiencia",
-      "disponibilidad": "martes",
-      "horario": ["09:00 AM", "11:00 AM", "02:00 PM", "03:00 PM", "05:00 PM"],
-      "contacto": ["correo@starwars.hospital"]
-    },
-    {
+  {
+    "nombre": "Dr. Yoda Jedi",
+    "especialidad": "Otorrinolaringología",
+    "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores.",
+    "foto": "./assets/images/profesional--yoda.png",
+    "experiencia": "8 años de experiencia",
+    "disponibilidad": "jueves",
+    "horario": ["09:00 AM", "10:00 AM", "11:00 AM", "02:00 PM", "04:00 PM"],
+    "contacto": ["correo@starwars.hospital"]
+  },
+  {
+    "nombre": "Dr. César Tapia",
+    "especialidad": "Dermatología",
+    "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores.",
+    "foto": "./assets/images/profesional--c3po.png",
+    "experiencia": "3 años de experiencia",
+    "disponibilidad": "lunes",
+    "horario": ["09:00 AM", "10:00 AM", "01:00 PM", "03:00 PM", "04:00 PM"],
+    "contacto": ["correo@starwars.hospital"]
+  },
+  {
+    "nombre": "Dr. Chew Bacca",
+    "especialidad": "Cardiología",
+    "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
+    "foto": "./assets/images/profesional--chewie.png",
+    "experiencia": "5 años de experiencia",
+    "disponibilidad": "viernes",
+    "horario": ["07:00 AM", "10:00 AM", "01:00 PM", "05:00 PM", "06:00 PM"],
+    "contacto": ["correo@starwars.hospital"]
+  },
+  {
+    "nombre": "Dr. Darth Vader",
+    "especialidad": "Cirugía",
+    "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores, velitplaceat eligendi quod, eos odit explicabo repellendus sint voluptas.",
+    "foto": "./assets/images/profesional--vader.png",
+    "experiencia": "3 años de experiencia",
+    "disponibilidad": "martes",
+    "horario": ["09:00 AM", "11:00 AM", "02:00 PM", "03:00 PM", "05:00 PM"],
+    "contacto": ["correo@starwars.hospital"]
+  },
+  {
     "nombre": "Dr. Darth Maul",
     "especialidad": "Otorrinolaringología",
     "resena": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Abminus repellendus sit quae error! Nam, dicta repudiandae vitae commodi dolores.",
@@ -109,7 +110,43 @@ const doctores = [
     "horario": ["07:00 AM", "10:00 AM", "01:00 PM", "05:00 PM", "06:00 PM"],
     "contacto": ["correo@starwars.hospital"]
   }
-  ];
+];
 
-  
+// Clonar el JSON original
+const doctoresClonados = JSON.parse(JSON.stringify(doctores));
 
+// Modificar la especialidad de "Otorrinolaringología" a "Ortodoncia"
+doctoresClonados.forEach((doctor) => {
+  if (doctor.especialidad === "Otorrinolaringología") {
+    doctor.especialidad = "Ortodoncia";
+  }
+});
+
+// Mostrar resultados
+console.log("Original:", doctores);
+console.log("Modificado:", doctoresClonados);
+
+// Función para fusionar los JSON
+const mergeDoctores = (original, modificado) => {
+  const resultado = [...original];
+
+  modificado.forEach((doctorModificado) => {
+    const index = resultado.findIndex((doctorOriginal) => doctorOriginal.nombre === doctorModificado.nombre);
+
+    if (index !== -1) {
+      // Actualiza los datos si ya existe en el original
+      resultado[index] = { ...resultado[index], ...doctorModificado };
+    } else {
+      // Agrega al doctor si es nuevo
+      resultado.push(doctorModificado);
+    }
+  });
+
+  return resultado;
+};
+
+// Fusionar los JSON
+const doctoresFusionados = mergeDoctores(doctores, doctoresClonados);
+
+// Mostrar resultados
+console.log("Fusionado:", doctoresFusionados);
