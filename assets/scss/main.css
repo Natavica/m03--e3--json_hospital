@@ -501,7 +501,7 @@ button:hover {
 .doctor {
   border: 1px solid #ccc;
   padding: 16px;
-  margin: 16px;
+  margin: 16px 0;
   display: flex;
   align-items: center;
   gap: 16px;
