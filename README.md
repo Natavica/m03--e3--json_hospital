@@ -1,9 +1,8 @@
-# Módulo 03: Evaluación M3 - Laboratorio virtual 1
+# Módulo 03: Evaluación Grupal
 ## Laboratorio Virtual: Integración de JSON, Estructuras de Datos y Algoritmos en el Sitio Web del Hospital
 
 ### Descripción del Proyecto
-*
-En este laboratorio, los estudiantes implementarán JSON para manipular y transferir datos en el sitio web del hospital, además de trabajar con estructuras de datos avanzadas y crear algoritmos para optimizar las operaciones con estos datos. Los estudiantes también practicarán la clonación, fusión y recorrido de objetos, y la implementación de algoritmos como búsqueda y ordenamiento en JavaScript.
+*El objetivo de este Aprendizaje Basado en Proyectos es que los estudiantes integren todos los conceptos avanzados de JavaScript para mejorar y completar el sitio web del hospital. Deberán demostrar habilidades en la manipulación de datos, el uso de algoritmos y estructuras de datos, y la aplicación de programación funcional, asincrónica y orientada a objetos.
 *
 
 ---
@@ -45,12 +44,6 @@ El sitio web se renderizará en el navegador, donde podrás navegar por las dife
 ```
 
 ---
-
-
-
-
-
-
 
 ### Explicación de Vistas
 
