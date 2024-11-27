@@ -166,7 +166,7 @@ fetch('./assets/js/equipo.json')
   })
   .then(data => { // Se procesan los datos que se cargaron desde el archivo JSON
     // Clonar los datos originales
-    const clonedData = JSON.parse(JSON.stringify(data)); //Convierta data en texto JSON
+    const clonedData = JSON.parse(JSON.stringify(data)); //Convierta data en texto JSON y la convierte en un arreglo identico
 
     // Modificar la copia
     clonedData.forEach(medico => { //Itera sobre cada objeto en clonedData (representando médicos. Si la especialidad del médico es "Otorrinolaringología", la cambia a "Ortodoncia"
