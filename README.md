@@ -1,9 +1,8 @@
-# Módulo 03: Evaluación Grupal
+# Módulo 03: Laboratorio Virtual 1
 ## Laboratorio Virtual: Integración de JSON, Estructuras de Datos y Algoritmos en el Sitio Web del Hospital
 
 ### Descripción del Proyecto
-*El objetivo de este Aprendizaje Basado en Proyectos es que los estudiantes integren todos los conceptos avanzados de JavaScript para mejorar y completar el sitio web del hospital. Deberán demostrar habilidades en la manipulación de datos, el uso de algoritmos y estructuras de datos, y la aplicación de programación funcional, asincrónica y orientada a objetos.
-*
+*En este taller, los estudiantes deben continuar incorporando funcionalidades de JavaScript básico en el proyecto del hospital. Además de manipular el DOM, validar datos, y manejar errores, se pedirá la entrada de información del usuario a través de un prompt, mostrando los resultados por consola o como alertas en el navegador*
 
 ---
 
@@ -21,98 +20,141 @@ El sitio web se renderizará en el navegador, donde podrás navegar por las dife
 ### Estructura de Carpetas y Archivos
 ```bash
 
-/corfo-proyecto-01
+/Estructura
 │
 ├── /assets/
+├── ├── /js/
+│   │   └── equipo.json
+│   │   └── clone.js
+│   │   └── estructuraDatos.js
+│   │   └── citas.js
+│   │   └── filter.js
+│   │   └── navbar.js
+│   │   └── prompt.js
+│
+│   └── /images/ 
 │   ├── /scss/
+│       └── /abstracts/  
+│       └── /components/  
+│       └── /core/
+│       └── /layout/
+│       └── /pages/
+│       └── /themes/
+│       └── /vendors/    
 │       └── main.scss 
 │       └── main.css.map
 │       └── main.css
-│       └── /components/  
-│                 └── _footer.scss
-│                 └── _header.scss
-│                 └── _variables.scss
-│  
-├── ├── /js/
-│   │   └── script.js
-│   └── /images/         
+│ 
 *
 ├── index.html              # Página principal (Home)
 ├── equipo.html             # Página del equipo médico
 └── contacto.html           # Página de contacto
+└── citas.html              # Con el botón agendar se agregan citas y con edl botón atender se borran
+└── gestion.html            # Página de contacto
 
 ```
 
 ---
 
-### Explicación de Vistas
 
-*Explica en el archivo README cómo funciona el event loop (stack, heap, queue) en JavaScript.*
+# Documentación del Proyecto
 
+## 1. Operaciones con JSON
 
-# Event Loop en JavaScript
+### Carga del JSON con `fetch()`
+El archivo `equipo.json` se carga utilizando `fetch`, que envía una solicitud HTTP al servidor.
 
-El **Event Loop** es un mecanismo fundamental en JavaScript que permite manejar operaciones asincrónicas y garantizar que las tareas se ejecuten de manera no bloqueante. A continuación, se describe cómo funcionan los componentes principales del Event Loop:
+- **Validación de respuesta:** Se verifica si el servidor devuelve un código de estado exitoso (`response.ok`).
+- **Conversión de datos:** La respuesta se convierte en un objeto JavaScript manipulable mediante `response.json()`.
 
----
+### Clonación del JSON
+Se usó `JSON.parse(JSON.stringify(data))` para crear una copia profunda del objeto JSON. Esto asegura que los cambios en la copia no afecten al original.
 
-## Componentes principales
-
-1. **Call Stack (Pila de llamadas)**:
-   - Es una estructura de datos que sigue el principio **LIFO** (*Last In, First Out*).
-   - Maneja las funciones y tareas que se están ejecutando de forma sincrónica.
-   - Cuando se llama a una función, esta se apila en el *Call Stack*. Cuando la función finaliza, se elimina de la pila.
-
-2. **Heap**:
-   - Es la región de memoria donde se almacenan los objetos y las variables dinámicas.
-   - JavaScript utiliza el *Heap* para asignar memoria de forma no estructurada y gestionar datos más complejos como objetos.
-
-3. **Message Queue (Cola de mensajes)**:
-   - Es una cola que sigue el principio **FIFO** (*First In, First Out*).
-   - Almacena las tareas asincrónicas (por ejemplo, eventos, `setTimeout`, `fetch`) que están listas para ser procesadas pero que esperan a que el *Call Stack* esté vacío.
-
-4. **Microtask Queue**:
-   - Similar a la Message Queue, pero con mayor prioridad.
-   - Contiene tareas como *Promises* resueltas y *Mutation Observers*. Estas tareas se procesan antes que las de la Message Queue.
+### Fusión (merge)
+La fusión de datos se realiza comparando objetos en el arreglo original (`data`) con los actualizados en la copia (`clonedData`). Si se encuentra una coincidencia, se reemplaza con el objeto actualizado.
 
 ---
 
-## Proceso del Event Loop
+## 2. Estructuras de datos
 
-*Es un mecanismo extra que añade un navegador cuando ejecuta js, de esta menera evitamos bloquear la ejecución de js constantemente*
+### Arreglos
+Los arreglos (`[]`) son la base para almacenar y manipular datos en JSON. También se usan para:
 
-1. **Ejecutar las tareas en el Call Stack**:
-   - Mientras haya tareas en el *Call Stack*, estas se ejecutan una tras otra de manera sincrónica.
+- Crear listas como `pila.data` o `cola.queue`.
+- Recorrer y filtrar datos (médicos, pacientes).
 
-2. **Revisar las Microtask Queue**:
-   - Si el *Call Stack* está vacío, el Event Loop procesará las tareas en la *Microtask Queue* antes de pasar a la *Message Queue*.
+### Pilas (LIFO: Last In, First Out)
+Implementada en la clase `Pila`.
 
-3. **Procesar la Message Queue**:
-   - Una vez que la *Microtask Queue* está vacía, el Event Loop toma la primera tarea de la *Message Queue* y la ejecuta en el *Call Stack*.
+#### Operaciones principales:
+- `push(elemento)`: Agrega un elemento al final del arreglo.
+- `pop()`: Elimina y devuelve el último elemento.
+- `length()`: Devuelve la cantidad de elementos.
 
-4. **Repetir el proceso**:
-   - El Event Loop continúa este ciclo hasta que no queden más tareas por ejecutar.
+#### Uso en el proyecto:
+Se usó para mostrar una lista de pacientes en orden inverso al que fueron añadidos.
+
+### Colas (FIFO: First In, First Out)
+Implementada en la clase `Cola`.
+
+#### Operaciones principales:
+- `enqueue(item)`: Agrega un elemento al final.
+- `dequeue()`: Elimina y devuelve el primer elemento.
+- `isEmpty()`: Verifica si la cola está vacía.
+- `length()`: Devuelve el número de elementos.
+
+#### Uso en el proyecto:
+Se usó para manejar la lista de pacientes pendientes por atender en el orden en que llegaron.
 
 ---
 
-## Ejemplo práctico
+## 3. Algoritmos implementados
 
-```javascript
-console.log('Inicio');
+### Recorrido de objetos JSON
+Se utilizaron métodos como `forEach`, `map` y `filter` para:
+- Iterar sobre los datos cargados.
+- Modificar especialidades (ejemplo: cambiar "Otorrinolaringología" por "Ortodoncia").
+- Filtrar médicos según especialidad seleccionada.
 
-setTimeout(() => {
-    console.log('Timeout 1');
-}, 0);
+#### Complejidad:
+- **`forEach` y `map`:** \( O(n) \), donde \( n \) es el número de elementos en el arreglo.
+- **`filter`:** \( O(n) \), ya que evalúa cada elemento para determinar si cumple con la condición.
 
-Promise.resolve().then(() => {
-    console.log('Promise 1');
-});
+### Fusión de datos (merge)
+Por cada elemento en el arreglo original (`data`), se busca el correspondiente en la copia (`clonedData`) usando `find`. Si se encuentra, se reemplaza; de lo contrario, se mantiene el original.
 
-console.log('Fin');
+#### Complejidad:
+- **Búsqueda con `find`:** \( O(m) \), donde \( m \) es el tamaño de `clonedData`.
+- **Total:** \( O(n \cdot m) \).
 
+### Renderizado de pacientes y doctores
+Se generan dinámicamente tarjetas o filas HTML con los datos.
 
-| Vista | | Descipción |
-|--------------|--------------|--------------|
-| Home     | (index.html)    | *Esta es la página de inicio del sitio web. Presenta una descripción general de los servicios de la clínica, información sobre su misión y visión, y enlaces a otras secciones como el equipo médico y la página de contacto.*|
-| Equipo       | (equipo.html)    | *En esta página se presenta una lista del equipo médico que trabaja en la clínica. Cada médico tiene una breve descripción de su especialidad, experiencia y una foto. Los usuarios pueden conocer más sobre los profesionales que estarán a cargo de su cuidado.* |
-| Contacto       | (contacto.html)   | *La página de contacto ofrece información sobre cómo llegar a la clínica, incluye un formulario para que los usuarios puedan enviar consultas o agendar una cita, y los detalles de contacto como dirección, teléfono y correo electrónico.* |
+#### Complejidad:
+\( O(n) \), donde \( n \) es el número de pacientes o doctores a mostrar.
+
+---
+
+## 4. Funciones auxiliares
+
+### `obtenerFechaHoraActual()`
+- Devuelve la fecha y hora formateada según la configuración local.
+- **Uso:** Registrar la hora en que se agenda una cita.
+
+### `renderizarPacientes()`
+- Crea una estructura HTML para mostrar pacientes en espera.
+- **Uso:** Actualiza dinámicamente la lista de pacientes.
+
+---
+
+## 5. Resumen de utilidad
+
+### JSON y estructuras de datos:
+- Facilitan el almacenamiento y manejo eficiente de información (médicos, pacientes).
+
+### Pilas y colas:
+- **Pila:** Visualización en orden inverso.
+- **Cola:** Orden de llegada.
+
+### Algoritmos:
+- Procesan datos de forma eficiente, desde modificaciones simples hasta renderizado dinámico.
